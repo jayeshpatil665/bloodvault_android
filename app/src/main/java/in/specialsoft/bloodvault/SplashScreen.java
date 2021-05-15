@@ -11,6 +11,8 @@ import android.widget.Toast;
 import in.specialsoft.bloodvault.DonorDetails.DonorDetails;
 import io.paperdb.Paper;
 
+import static in.specialsoft.bloodvault.DonorDetails.DonorDetails.UserIDKey;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -21,14 +23,10 @@ public class SplashScreen extends AppCompatActivity {
 
         if (isNetworkConnected())
         {
-            Intent intent = new Intent(SplashScreen.this,MainActivity.class);
-            startActivity(intent);
-            finish();
-
-            String useIdKey = String.valueOf(Paper.book().read(DonorDetails.UserIDKey));
-            if(! useIdKey.equals(""))
+            String useIdKey = Paper.book().read(UserIDKey);
+            if(useIdKey!=null)
             {
-                this.allowAccess(useIdKey);
+                allowAccess(useIdKey);
             }
             else
             {
@@ -54,16 +52,26 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void newUser() {
-        //to Register
+        //to Login/ Registration Page
+        Intent intent = new Intent(SplashScreen.this,LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void allowAccess(String useIdKey) {
         //check user Login
+
+        //storeData
+
+        //if exist Login
+        Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void storeData() {
 
-        Paper.book().write(DonorDetails.UserIDKey,"ID");
+        Paper.book().write(UserIDKey,"ID");
 
         Paper.book().write(DonorDetails.UserNameKey,"Name");
         Paper.book().write(DonorDetails.UserPhoneKey,"phone");

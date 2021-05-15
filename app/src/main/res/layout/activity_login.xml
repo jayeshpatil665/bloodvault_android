@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Login"
+        android:textSize="35sp"
+        android:textStyle="italic|bold"
+        android:textColor="#AC9D87"
+        />
+
+    <EditText
+        android:id="@+id/etLoginPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact no"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:inputType="number"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="50sp"
+        />
+
+    <EditText
+        android:id="@+id/etLoginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textSize="20dp"
+        android:inputType="textPassword"
+        android:gravity="center"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="15dp"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38sp"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:text="Login"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:padding="7dp"
+        android:backgroundTint="#957F60"
+        android:onClick="onLogin"
+        />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:text="Register"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:padding="7dp"
+        android:backgroundTint="#957F60"
+        android:onClick="toRegister"
+        />
+
+
+</LinearLayout>

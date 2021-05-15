@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Registration"
+                android:gravity="center"
+                android:textSize="35sp"
+                android:textColor="#AC9D87"
+                android:textStyle="italic|bold"
+                />
+
+            <EditText
+                android:id="@+id/etRegName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvRegistration"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:textColor="@color/black"
+                />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etRegName"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:checked="true"
+                    android:textSize="20sp"
+                    android:textColor="#AC9D87"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:textSize="20sp"
+                    android:textColor="#AC9D87"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+
+                    />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etRegContactNo"
+                android:layout_below="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact no"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="15sp"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                />
+
+            <EditText
+                android:id="@+id/etRegAddress"
+                android:layout_below="@+id/etRegContactNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:inputType="text"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:padding="15sp"
+                />
+
+            <EditText
+                android:id="@+id/etRegCity"
+                android:layout_below="@+id/etRegAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="text"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:padding="15sp"
+                />
+
+            <TextView
+                android:id="@+id/tvAuthenticationDetails"
+                android:layout_below="@id/etRegCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Authentication Details"
+                android:textSize="26sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+
+            <EditText
+                android:id="@+id/etRegPassword"
+                android:layout_below="@+id/tvAuthenticationDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20sp"
+                android:layout_marginLeft="20sp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:padding="15sp"
+                android:textColor="@color/black"
+                />
+
+            <LinearLayout
+                android:id="@+id/llSpinner"
+                android:layout_below="@id/etRegPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvBloodGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Group "
+                    android:textSize="25sp"
+                    android:textColor="#AC9D87"
+                    android:textStyle="bold"
+                    />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:popupBackground="@color/white"
+                    android:layout_marginLeft="10dp"
+                    />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkboxDonor"
+                android:layout_below="@+id/llSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:text="I want to be a Donor"
+                android:textSize="20sp"
+                />
+            <Button
+                android:id="@+id/btnRegisterFinal"
+                android:layout_below="@+id/checkboxDonor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="Register"
+                android:backgroundTint="#957F60"
+                android:textSize="20sp"
+                android:padding="5sp"
+                android:onClick="onRegister"
+                />
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

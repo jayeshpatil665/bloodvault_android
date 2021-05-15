@@ -39,4 +39,6 @@ dependencies {
 
     //lotie animations
     implementation 'com.airbnb.android:lottie:3.4.1'
+    //PaperDB to store data locally
+    implementation 'io.paperdb:paperdb:2.7.1'
 }

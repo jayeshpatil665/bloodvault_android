@@ -11,6 +11,14 @@ import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import in.specialsoft.bloodvault.Api.ApiClient;
+import in.specialsoft.bloodvault.Api.ApiInterface;
+import in.specialsoft.bloodvault.LoginInOut.LoginInput;
+import in.specialsoft.bloodvault.LoginInOut.LoginOutput;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText etLoginPhone,etLoginPassword;
@@ -61,8 +69,33 @@ public class LoginActivity extends AppCompatActivity {
     //Login API Call
     private void toLoginUser(String phone, String pass) {
 
-        //after user authintication
-        Intent homeIntent = new Intent(LoginActivity.this,MainActivity.class);
-        startActivity(homeIntent);
+        ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
+        LoginInput i = new LoginInput();
+        i.setPhone(phone);
+        i.setPassword(pass);
+
+        api.getLogin(i).enqueue(new Callback<LoginOutput>() {
+            @Override
+            public void onResponse(Call<LoginOutput> call, Response<LoginOutput> response) {
+                if (response.body().getOutput()!=null){
+                    Toast.makeText(LoginActivity.this, "Invalid Credentials !!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    String id = response.body().getId();
+                    Toast.makeText(LoginActivity.this, "Login Success ! "+id, Toast.LENGTH_SHORT).show();
+
+                    //after user authintication
+                    Intent homeIntent = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(homeIntent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginOutput> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "Error in API CALL !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

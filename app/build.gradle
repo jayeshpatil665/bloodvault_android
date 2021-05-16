@@ -41,4 +41,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.4.1'
     //PaperDB to store data locally
     implementation 'io.paperdb:paperdb:2.7.1'
+
+    //
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 }

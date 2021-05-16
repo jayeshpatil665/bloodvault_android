@@ -13,8 +13,10 @@ import java.util.regex.Pattern;
 
 import in.specialsoft.bloodvault.Api.ApiClient;
 import in.specialsoft.bloodvault.Api.ApiInterface;
+import in.specialsoft.bloodvault.DonorDetails.DonorDetails;
 import in.specialsoft.bloodvault.LoginInOut.LoginInput;
 import in.specialsoft.bloodvault.LoginInOut.LoginOutput;
+import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Paper.init(this);
 
         etLoginPhone = findViewById(R.id.etLoginPhone);
         etLoginPassword = findViewById(R.id.etLoginPassword);
@@ -84,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     String id = response.body().getId();
                     Toast.makeText(LoginActivity.this, "Login Success ! "+id, Toast.LENGTH_SHORT).show();
-
+                    Paper.book().write(DonorDetails.UserIDKey,id);
                     //after user authintication
                     Intent homeIntent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(homeIntent);

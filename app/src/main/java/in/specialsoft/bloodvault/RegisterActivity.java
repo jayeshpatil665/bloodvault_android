@@ -13,6 +13,14 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import in.specialsoft.bloodvault.Api.ApiClient;
+import in.specialsoft.bloodvault.Api.ApiInterface;
+import in.specialsoft.bloodvault.RegisterInOut.RegisterInput;
+import in.specialsoft.bloodvault.RegisterInOut.RegisterOutput;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 import static in.specialsoft.bloodvault.LoginActivity.isValidMob;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -94,10 +102,38 @@ public class RegisterActivity extends AppCompatActivity {
     //Register API Call
     private void toRegisterUser(String name, String phone, String address, String city, String pass, String bloodGroup, int gender, int available) {
 
+        ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
+        RegisterInput i = new RegisterInput();
+        i.setName(name);
+        i.setPhone(phone);
+        i.setPassword(pass);
+        i.setAddress(address);
+        i.setCity(city);
+        i.setBloodGroup(bloodGroup);
+        i.setAvailable(available);
+        i.setGender(gender);
 
-        //after user registration - to Login Page
+        api.getRegister(i).enqueue(new Callback<RegisterOutput>() {
+            @Override
+            public void onResponse(Call<RegisterOutput> call, Response<RegisterOutput> response) {
+                    if (response.body().getOutput().equals("Success")){
+                        Toast.makeText(RegisterActivity.this, "Registration "+response.body().getOutput().toString(), Toast.LENGTH_SHORT).show();
 
-        Intent homeIntent = new Intent(RegisterActivity.this,MainActivity.class);
-        startActivity(homeIntent);
+                        //after user registration - to Login Page
+                        Intent loginIntent = new Intent(RegisterActivity.this,LoginActivity.class);
+                        startActivity(loginIntent);
+                    }
+                    else
+                    {
+                        Toast.makeText(RegisterActivity.this, "Unable to Register user !", Toast.LENGTH_SHORT).show();
+                    }
+            }
+
+            @Override
+            public void onFailure(Call<RegisterOutput> call, Throwable t) {
+                Toast.makeText(RegisterActivity.this, "Error in API CALL !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

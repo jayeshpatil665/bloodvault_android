@@ -8,8 +8,18 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import java.util.List;
+
+import in.specialsoft.bloodvault.Api.ApiClient;
+import in.specialsoft.bloodvault.Api.ApiInterface;
+import in.specialsoft.bloodvault.DonorDetails.Donor;
 import in.specialsoft.bloodvault.DonorDetails.DonorDetails;
+import in.specialsoft.bloodvault.LoadUserData.LoadUserDataInput;
+import in.specialsoft.bloodvault.LoadUserData.LoadUserDataOutput;
 import io.paperdb.Paper;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static in.specialsoft.bloodvault.DonorDetails.DonorDetails.UserIDKey;
 
@@ -60,13 +70,28 @@ public class SplashScreen extends AppCompatActivity {
 
     private void allowAccess(String useIdKey) {
         //check user Login
+        ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
+        LoadUserDataInput i = new LoadUserDataInput();
+        i.setId(useIdKey);
 
-        //storeData
+        api.getuserData(i).enqueue(new Callback<LoadUserDataOutput>() {
+            @Override
+            public void onResponse(Call<LoadUserDataOutput> call, Response<LoadUserDataOutput> response) {
+                Toast.makeText(SplashScreen.this, "Welcome "+response.body().getDonor().get(0).getName(), Toast.LENGTH_SHORT).show();
 
-        //if exist Login
-        Intent intent = new Intent(SplashScreen.this,MainActivity.class);
-        startActivity(intent);
-        finish();
+                //storeData
+
+                //if exist Login
+                Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onFailure(Call<LoadUserDataOutput> call, Throwable t) {
+                Toast.makeText(SplashScreen.this, "Error in API CALL !", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void storeData() {

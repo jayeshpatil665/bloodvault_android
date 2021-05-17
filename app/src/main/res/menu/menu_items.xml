@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/search_donor"
+        android:title="Search Donor"/>
+    <item
+        android:id="@+id/blood_bank"
+        android:title="Blood Bank"/>
+    <item
+        android:id="@+id/my_details"
+        android:title="My Details"/>
+
+    <item
+        android:id="@+id/logout"
+        android:title="LogOut"/>
+</menu>

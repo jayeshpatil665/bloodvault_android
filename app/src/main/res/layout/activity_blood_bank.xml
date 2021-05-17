@@ -5,26 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".BloodBankActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:text="BloodVault"
-        android:textColor="@color/purple_700"
-        android:textSize="35dp"
-        android:textStyle="bold" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Search Donor"
+        android:layout_marginTop="30dp"
+        android:text="Blood Bank"
         android:gravity="center"
         android:textSize="30dp"
         android:textColor="#AC9D87"
         android:textStyle="italic|bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:id="@+id/llSpinner"
@@ -45,7 +44,7 @@
             />
 
         <Spinner
-            android:id="@+id/spinner_main"
+            android:id="@+id/spinnerSearchDonor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:popupBackground="@color/white"
@@ -55,13 +54,18 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+    <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38sp"
+        android:layout_marginLeft="35sp"
+        android:layout_marginRight="35sp"
+        android:text="Send Request"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:padding="7dp"
+        android:backgroundTint="#957F60"
+        />
 
 </LinearLayout>

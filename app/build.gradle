@@ -42,7 +42,8 @@ dependencies {
     //PaperDB to store data locally
     implementation 'io.paperdb:paperdb:2.7.1'
 
-    //
+    //pojo https://www.jsonschema2pojo.org/
+    //retrofit - for API call
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 }

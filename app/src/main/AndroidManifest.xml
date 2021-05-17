@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.specialsoft.bloodvault">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -11,9 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.BloodVault">
-        <activity android:name=".RegisterActivity"></activity>
+        android:theme="@style/Theme.BloodVault"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MyDetailsActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".BloodBankActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".NetworkErrorActivity" />
         <activity

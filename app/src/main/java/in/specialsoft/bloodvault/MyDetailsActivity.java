@@ -1,8 +1,10 @@
 package in.specialsoft.bloodvault;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -23,6 +26,7 @@ public class MyDetailsActivity extends AppCompatActivity {
 
     EditText etDetailName,etDetailMobile,etDetailAddress,etDetailCity;
     CheckBox checkboxDetails;
+    RadioButton rbMale,rbFemale;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,20 +45,48 @@ public class MyDetailsActivity extends AppCompatActivity {
 
         checkboxDetails = findViewById(R.id.checkboxDetails);
 
+        rbMale = findViewById(R.id.rbMale);
+        rbFemale = findViewById(R.id.rbFemale);
+
         init();
 
     }
 
     private void init() {
-        String name,phone,address,city,bloodGroup;
-        int gender,available;
+        String name,phone,address,city,bloodGroup,gender,available;
 
         name = Paper.book().read(DonorDetails.UserNameKey);
         phone = Paper.book().read(DonorDetails.UserPhoneKey);
         address = Paper.book().read(DonorDetails.UserAddressKey);
         city = Paper.book().read(DonorDetails.UserCityKey);
         bloodGroup = Paper.book().read(DonorDetails.UserBloodGroupKey);
+
+        available = Paper.book().read(DonorDetails.UserAvailableKey);
+        gender = Paper.book().read(DonorDetails.UserGenderKey);
+
+        etDetailName.setText(name);
+        etDetailAddress.setText(address);
+        etDetailCity.setText(city);
+        etDetailMobile.setText(phone);
+
+        for (int i = 0;i<bloodGroups.length;i++){
+            if (bloodGroups[i].equals(bloodGroup)){
+                myDetailsSpinner.setSelection(i);
+            }
+        }
+
+        if (available.equals("1")){
+            checkboxDetails.setChecked(true);
+        }
+
+        if (gender.equals("1")){
+            rbMale.setChecked(true);
+        }
+        else if (gender.equals("0")){
+            rbFemale.setChecked(false);
+        }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,5 +119,10 @@ public class MyDetailsActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //
     }
 }

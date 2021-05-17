@@ -32,7 +32,7 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_toRightOf="@+id/tv_name"
-        android:text="B+" />
+        android:text=" B+" />
 
     <TextView
         android:id="@+id/tv_Address"

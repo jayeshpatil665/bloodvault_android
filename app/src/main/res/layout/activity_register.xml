@@ -23,7 +23,7 @@
                 android:text="Registration"
                 android:gravity="center"
                 android:textSize="35sp"
-                android:textColor="#AC9D87"
+                android:textColor="@color/purple_700"
                 android:textStyle="italic|bold"
                 />
 
@@ -34,7 +34,7 @@
                 android:layout_below="@id/tvRegistration"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:hint="Name"
                 android:inputType="textPersonName"
                 android:gravity="center"
@@ -59,7 +59,7 @@
                     android:text="Male"
                     android:checked="true"
                     android:textSize="20sp"
-                    android:textColor="#AC9D87"
+                    android:textColor="@color/text"
                     android:textStyle="bold"
                     android:layout_marginRight="10dp"
                     />
@@ -70,10 +70,9 @@
                     android:layout_height="wrap_content"
                     android:text="Female"
                     android:textSize="20sp"
-                    android:textColor="#AC9D87"
+                    android:textColor="@color/text"
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp"
-
                     />
             </RadioGroup>
 
@@ -163,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:text="Blood Group "
                     android:textSize="25sp"
-                    android:textColor="#AC9D87"
+                    android:textColor="@color/text"
                     android:textStyle="bold"
                     />
 
@@ -193,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:text="Register"
-                android:backgroundTint="#957F60"
+                android:backgroundTint="@color/purple_700"
                 android:textSize="20sp"
                 android:padding="5sp"
                 android:onClick="onRegister"

@@ -66,7 +66,7 @@ public class SplashScreen extends AppCompatActivity {
         finish();
     }
 
-    private void allowAccess(String useIdKey) {
+    public void allowAccess(String useIdKey) {
         //check user Login
         ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
         LoadUserDataInput i = new LoadUserDataInput();
@@ -76,7 +76,6 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoadUserDataOutput> call, Response<LoadUserDataOutput> response) {
                 Toast.makeText(SplashScreen.this, "Welcome "+response.body().getDonor().get(0).getName(), Toast.LENGTH_SHORT).show();
-
                 //storeData
                 storeData(response.body().getDonor().get(0));
                 //if exist Login
@@ -93,7 +92,6 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void storeData(Donor donor) {
-
        // Paper.book().write(UserIDKey,"ID");
 
         Paper.book().write(DonorDetails.UserNameKey,donor.getName());

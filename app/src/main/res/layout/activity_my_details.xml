@@ -24,7 +24,7 @@
                 android:text="My Details"
                 android:gravity="center"
                 android:textSize="30dp"
-                android:textColor="#AC9D87"
+                android:textColor="@color/purple_700"
                 android:textStyle="italic|bold"/>
 
 
@@ -42,7 +42,7 @@
                     android:id="@+id/tvName"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Name:"
+                    android:text="Name "
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:textStyle="bold"
@@ -58,7 +58,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:textColor="@color/white"
                     />
 
             </LinearLayout>
@@ -67,14 +66,12 @@
             <LinearLayout
                 android:id="@+id/llGender"
                 android:layout_below="@+id/llName"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-
                 >
-
                 <RadioGroup
                     android:id="@+id/radioGroup"
                     android:layout_width="match_parent"
@@ -89,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Male"
                         android:textSize="20sp"
-                        android:textColor="#AC9D87"
+                        android:textColor="@color/text"
                         android:textStyle="bold"
                         android:layout_marginRight="10dp"
                         />
@@ -100,11 +97,9 @@
                         android:layout_height="wrap_content"
                         android:text="Female"
                         android:textSize="20sp"
-                        android:textColor="#AC9D87"
+                        android:textColor="@color/text"
                         android:textStyle="bold"
-                        android:layout_marginLeft="10dp"
-
-                        />
+                        android:layout_marginLeft="10dp"/>
                 </RadioGroup>
 
             </LinearLayout>
@@ -112,12 +107,11 @@
             <LinearLayout
                 android:id="@+id/llBloodGroup"
                 android:layout_below="@+id/llGender"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-
                 >
 
                 <TextView
@@ -126,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:text="Blood Group "
                     android:textSize="25sp"
-                    android:textColor="#AC9D87"
+                    android:textColor="@color/text"
                     android:textStyle="bold"
                     />
 
@@ -154,7 +148,7 @@
                     android:id="@+id/tvContactNo"
                     android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:text="Contact No:"
+                    android:text="Contact No "
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:textStyle="bold"
@@ -170,7 +164,6 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:layout_marginRight="10sp"
-                    android:textColor="@color/white"
                     />
 
             </LinearLayout>
@@ -190,7 +183,7 @@
                     android:id="@+id/tvAddress"
                     android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:text="Address:"
+                    android:text="Address "
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:textStyle="bold"
@@ -205,7 +198,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10sp"
-                    android:textColor="@color/white"
                     />
 
             </LinearLayout>
@@ -218,14 +210,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-
                 >
 
                 <TextView
                     android:id="@+id/tvCity"
                     android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:text="City:"
+                    android:text="City "
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:textStyle="bold"
@@ -240,7 +231,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10sp"
-                    android:textColor="@color/white"
                     />
 
             </LinearLayout>
@@ -278,7 +268,7 @@
                 android:text="Update"
                 android:textSize="20sp"
                 android:padding="7dp"
-                android:backgroundTint="#957F60"/>
+                android:backgroundTint="@color/purple_700"/>
 
 </RelativeLayout>
 

@@ -90,16 +90,21 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Login Success ! "+id, Toast.LENGTH_SHORT).show();
                     Paper.book().write(DonorDetails.UserIDKey,id);
                     //after user authintication
-                    Intent homeIntent = new Intent(LoginActivity.this,MainActivity.class);
+                    Intent homeIntent = new Intent(LoginActivity.this,SplashScreen.class);
                     startActivity(homeIntent);
                 }
             }
 
             @Override
             public void onFailure(Call<LoginOutput> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "Error in API CALL !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Error in API CALL !"+t, Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        //
     }
 }

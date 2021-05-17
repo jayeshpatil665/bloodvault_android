@@ -25,10 +25,14 @@ import in.specialsoft.bloodvault.DonorByGroupInOut.DonorByGroupInput;
 import in.specialsoft.bloodvault.DonorByGroupInOut.DonorByGroupOutput;
 import in.specialsoft.bloodvault.DonorDetails.Donor;
 import in.specialsoft.bloodvault.DonorDetails.DonorAdapter;
+import in.specialsoft.bloodvault.DonorDetails.DonorDetails;
 import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static in.specialsoft.bloodvault.DonorDetails.DonorDetails.UserIDKey;
+import static in.specialsoft.bloodvault.DonorDetails.DonorDetails.UserNameKey;
 
 public class MainActivity extends AppCompatActivity {
 

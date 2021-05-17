@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rlitem"
+    android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_centerVertical="true"
         app:srcCompat="@drawable/splash_logo" />
 
@@ -18,18 +18,28 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:textSize="20sp"
+        android:layout_marginLeft="3dp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_toEndOf="@+id/imageView"
         android:text="Jayesh Patil" />
 
     <TextView
+        android:id="@+id/tv_bloodgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_toRightOf="@+id/tv_name"
+        android:text="B+" />
+
+    <TextView
         android:id="@+id/tv_Address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textSize="20sp"
+        android:layout_margin="3dp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_toEndOf="@+id/imageView"
         android:layout_below="@+id/tv_name"
@@ -39,8 +49,8 @@
         android:id="@+id/tv_mobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textSize="20sp"
+        android:layout_margin="3dp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_toEndOf="@+id/imageView"
         android:layout_below="@+id/tv_Address"

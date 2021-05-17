@@ -8,8 +8,6 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import java.util.List;
-
 import in.specialsoft.bloodvault.Api.ApiClient;
 import in.specialsoft.bloodvault.Api.ApiInterface;
 import in.specialsoft.bloodvault.DonorDetails.Donor;

@@ -42,6 +42,7 @@ public class DonorAdapter extends RecyclerView.Adapter<DonorAdapter.ViewHolder> 
         holder.tv_mobile.setText("Mobile : "+donorList.get(position).getPhone());
         holder.tv_name.setText("Name : "+donorList.get(position).getName());
         holder.tv_Address.setText("Address : "+ donorList.get(position).getAddress());
+        holder.tv_bloodgroup.setText(""+donorList.get(position).getBloodGroup());
 
         holder.rlitem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,14 +64,16 @@ public class DonorAdapter extends RecyclerView.Adapter<DonorAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         //step2-findView
-        TextView tv_name, tv_Address,tv_mobile;
+        TextView tv_name, tv_Address,tv_mobile,tv_bloodgroup;
         RelativeLayout rlitem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_name = itemView.findViewById(R.id.tv_name);
             tv_Address = itemView.findViewById(R.id.tv_Address);
             tv_mobile = itemView.findViewById(R.id.tv_mobile);
+            tv_bloodgroup = itemView.findViewById(R.id.tv_bloodgroup);
             rlitem = itemView.findViewById(R.id.rlitem);
         }
     }
+
 }

@@ -37,6 +37,6 @@ public interface ApiInterface {
     Call<RegisterOutput> getuserDataUpdate(@Body Donor i);
 
     //Blood Group Count API
-    @POST("donor/donorDataUpdate.php")
+    @POST("donor/bloodGroupCount.php")
     Call<BloodGroupCountOutput> getBloodGroupCount(@Body BloodGroupCountInput i);
 }

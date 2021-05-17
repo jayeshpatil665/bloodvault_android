@@ -54,6 +54,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/etDetailName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -164,6 +165,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/etDetailMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -199,6 +201,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/etDetailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10sp"
@@ -233,6 +236,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/etDetailCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10sp"
@@ -252,6 +256,7 @@
                 >
 
                 <CheckBox
+                    android:id="@+id/checkboxDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

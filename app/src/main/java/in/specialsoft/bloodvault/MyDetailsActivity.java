@@ -8,15 +8,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import in.specialsoft.bloodvault.DonorDetails.DonorDetails;
 import io.paperdb.Paper;
 
 public class MyDetailsActivity extends AppCompatActivity {
 
     Spinner myDetailsSpinner;
     String[] bloodGroups = {"Select","A-","A+","AB-","AB+","B-","B+","O-","O+"};
+
+    EditText etDetailName,etDetailMobile,etDetailAddress,etDetailCity;
+    CheckBox checkboxDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +33,27 @@ public class MyDetailsActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(MyDetailsActivity.this, android.R.layout.simple_list_item_1,bloodGroups);
         myDetailsSpinner.setAdapter(adapter);
+
+        etDetailName = findViewById(R.id.etDetailName);
+        etDetailMobile = findViewById(R.id.etDetailMobile);
+        etDetailAddress = findViewById(R.id.etDetailAddress);
+        etDetailCity = findViewById(R.id.etDetailCity);
+
+        checkboxDetails = findViewById(R.id.checkboxDetails);
+
+        init();
+
+    }
+
+    private void init() {
+        String name,phone,address,city,bloodGroup;
+        int gender,available;
+
+        name = Paper.book().read(DonorDetails.UserNameKey);
+        phone = Paper.book().read(DonorDetails.UserPhoneKey);
+        address = Paper.book().read(DonorDetails.UserAddressKey);
+        city = Paper.book().read(DonorDetails.UserCityKey);
+        bloodGroup = Paper.book().read(DonorDetails.UserBloodGroupKey);
     }
 
     @Override

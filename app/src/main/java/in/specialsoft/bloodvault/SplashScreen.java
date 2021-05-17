@@ -80,7 +80,7 @@ public class SplashScreen extends AppCompatActivity {
                 Toast.makeText(SplashScreen.this, "Welcome "+response.body().getDonor().get(0).getName(), Toast.LENGTH_SHORT).show();
 
                 //storeData
-
+                storeData(response.body().getDonor().get(0));
                 //if exist Login
                 Intent intent = new Intent(SplashScreen.this,MainActivity.class);
                 startActivity(intent);
@@ -94,18 +94,18 @@ public class SplashScreen extends AppCompatActivity {
         });
     }
 
-    private void storeData() {
+    private void storeData(Donor donor) {
 
-        Paper.book().write(UserIDKey,"ID");
+       // Paper.book().write(UserIDKey,"ID");
 
-        Paper.book().write(DonorDetails.UserNameKey,"Name");
-        Paper.book().write(DonorDetails.UserPhoneKey,"phone");
-        Paper.book().write(DonorDetails.UserAddressKey,"Address");
-        Paper.book().write(DonorDetails.UserCityKey,"city");
-        Paper.book().write(DonorDetails.UserBloodGroupKey,"BloodGroup");
+        Paper.book().write(DonorDetails.UserNameKey,donor.getName());
+        Paper.book().write(DonorDetails.UserPhoneKey,donor.getPhone());
+        Paper.book().write(DonorDetails.UserAddressKey,donor.getAddress());
+        Paper.book().write(DonorDetails.UserCityKey,donor.getCity());
+        Paper.book().write(DonorDetails.UserBloodGroupKey,donor.getBloodGroup());
 
-        Paper.book().write(DonorDetails.UserGenderKey,"1/0");
-        Paper.book().write(DonorDetails.UserAvailableKey,"1/0");
+        Paper.book().write(DonorDetails.UserGenderKey,donor.getGender());
+        Paper.book().write(DonorDetails.UserAvailableKey,donor.getAvailable());
     }
 
 }

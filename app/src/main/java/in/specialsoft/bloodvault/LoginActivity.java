@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.regex.Matcher;
@@ -24,7 +25,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     EditText etLoginPhone,etLoginPassword;
-
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
         etLoginPhone = findViewById(R.id.etLoginPhone);
         etLoginPassword = findViewById(R.id.etLoginPassword);
+        progressBar = findViewById(R.id.progressBar);
     }
 
     public void onLogin(View view) {
@@ -43,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         if (!phone.equals("") && !pass.equals(""))
         {
             if (isValidMob(phone)){
+                progressBar.setVisibility(View.VISIBLE);
                 toLoginUser(phone,pass);
             }
             else {
@@ -81,13 +84,14 @@ public class LoginActivity extends AppCompatActivity {
         api.getLogin(i).enqueue(new Callback<LoginOutput>() {
             @Override
             public void onResponse(Call<LoginOutput> call, Response<LoginOutput> response) {
+                progressBar.setVisibility(View.GONE);
                 if (response.body().getOutput()!=null){
                     Toast.makeText(LoginActivity.this, "Invalid Credentials !!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
                     String id = response.body().getId();
-                    Toast.makeText(LoginActivity.this, "Login Success ! "+id, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Login Success ! ", Toast.LENGTH_SHORT).show();
                     Paper.book().write(DonorDetails.UserIDKey,id);
                     //after user authintication
                     Intent homeIntent = new Intent(LoginActivity.this,SplashScreen.class);

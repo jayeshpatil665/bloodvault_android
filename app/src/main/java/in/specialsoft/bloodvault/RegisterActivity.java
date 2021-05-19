@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -34,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     RadioButton rbMale,rbFemale;
     CheckBox checkboxDonor;
 
+    ProgressBar progressBar2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         checkboxDonor = findViewById(R.id.checkboxDonor);
 
         spinner.setSelection(0);
+        progressBar2 = findViewById(R.id.progressBar2);
     }
 
     public void onRegister(View view) {
@@ -86,6 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             if (isValidMob(phone)){
                 //to Register API Call
+                progressBar2.setVisibility(View.VISIBLE);
                 toRegisterUser(name,phone,address,city,pass,bloodGroup,gender,available);
             }
             else {
@@ -116,6 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
         api.getRegister(i).enqueue(new Callback<RegisterOutput>() {
             @Override
             public void onResponse(Call<RegisterOutput> call, Response<RegisterOutput> response) {
+                progressBar2.setVisibility(View.GONE);
                     if (response.body().getOutput().equals("Success")){
                         Toast.makeText(RegisterActivity.this, "Registration "+response.body().getOutput().toString(), Toast.LENGTH_SHORT).show();
 

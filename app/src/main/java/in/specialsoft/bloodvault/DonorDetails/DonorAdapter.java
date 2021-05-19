@@ -39,10 +39,10 @@ public class DonorAdapter extends RecyclerView.Adapter<DonorAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull DonorAdapter.ViewHolder holder, int position) {
 
-        holder.tv_mobile.setText("Mobile : "+donorList.get(position).getPhone());
+        holder.tv_mobile.setText("Mobile : \uD83D\uDCDE "+donorList.get(position).getPhone());
         holder.tv_name.setText("Name : "+donorList.get(position).getName());
         holder.tv_Address.setText("Address : "+ donorList.get(position).getAddress());
-        holder.tv_bloodgroup.setText(""+donorList.get(position).getBloodGroup());
+        holder.tv_bloodgroup.setText(" "+donorList.get(position).getBloodGroup());
 
         holder.rlitem.setOnClickListener(new View.OnClickListener() {
             @Override

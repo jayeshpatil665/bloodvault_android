@@ -185,9 +185,19 @@
                 android:text="I want to be a Donor"
                 android:textSize="20sp"
                 />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:visibility="gone"
+                android:layout_below="@+id/checkboxDonor"
+                style="?android:attr/progressBarStyle"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/btnRegisterFinal"
-                android:layout_below="@+id/checkboxDonor"
+                android:layout_below="@+id/progressBar2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"

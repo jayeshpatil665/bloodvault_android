@@ -54,6 +54,6 @@
         android:textColor="@color/black"
         android:layout_toEndOf="@+id/imageView"
         android:layout_below="@+id/tv_Address"
-        android:text="1234567895" />
+        android:text="📞 1234567895" />
 
 </RelativeLayout>

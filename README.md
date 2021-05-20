@@ -1,5 +1,5 @@
 # bloodvault_android
-.. Work In Progress ... Date 17/5/2021 : 9:45 PM
+.. ALL Done (User + Admin side) ... Date 20/5/2021 : 3:40 PM
 <br>
 ![](app/src/main/res/drawable/splash_logo.png)
 <br>

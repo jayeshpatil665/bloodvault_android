@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/blood_bank_home"
+        android:title="Blood Bank"/>
+    <item
+        android:id="@+id/blood_request"
+        android:title="Blood Requests"/>
+    <item
+        android:id="@+id/blood_bank_update"
+        android:title="Update Blood Bank"/>
+
+    <item
+        android:id="@+id/logout_admin"
+        android:title="LogOut"/>
+</menu>

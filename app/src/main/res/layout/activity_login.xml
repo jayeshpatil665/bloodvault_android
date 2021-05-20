@@ -72,6 +72,19 @@
         android:onClick="toRegister"
         />
 
+    <TextView
+        android:id="@+id/textView"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toAdminPannel"
+        android:text="Admin Login" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"

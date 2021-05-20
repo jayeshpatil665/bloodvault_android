@@ -1,5 +1,10 @@
 package in.specialsoft.bloodvault.Api;
 
+import in.specialsoft.bloodvault.AdminBloodGroupUpdate.AdminBloodGroupUpdateIn;
+import in.specialsoft.bloodvault.AdminBloodRequestInOut.AdminBloodRequestIn;
+import in.specialsoft.bloodvault.AdminBloodRequestInOut.AdminBloodRequestOut;
+import in.specialsoft.bloodvault.AdminBloodRequestInOut.AdminBloodRequestRemove;
+import in.specialsoft.bloodvault.AdminBloodRequestInOut.AdminGenralOutputs;
 import in.specialsoft.bloodvault.BloodGroupCountInOut.BloodGroupCountInput;
 import in.specialsoft.bloodvault.BloodGroupCountInOut.BloodGroupCountOutput;
 import in.specialsoft.bloodvault.DonorByGroupInOut.DonorByGroupInput;
@@ -37,6 +42,22 @@ public interface ApiInterface {
     Call<RegisterOutput> getuserDataUpdate(@Body Donor i);
 
     //Blood Group Count API
-    @POST("donor/bloodGroupCount.php")
+    @POST("admin/showAvailableCount.php")
     Call<BloodGroupCountOutput> getBloodGroupCount(@Body BloodGroupCountInput i);
+
+    //Admin - Show Blood requests API
+    @POST("admin/showRequests.php")
+    Call<AdminBloodRequestOut> getBloodRequests(@Body AdminBloodRequestIn i);
+
+    //Admin - Make Blood requests API
+    @POST("admin/makeRequest.php")
+    Call<AdminGenralOutputs> makeBloodRequests(@Body AdminBloodRequestRemove i);
+
+    //Admin - Delete Blood requests API
+    @POST("admin/removeRequest.php")
+    Call<AdminGenralOutputs> removeBloodRequests(@Body AdminBloodRequestRemove i);
+
+    //Admin - Blood update API
+    @POST("admin/removeBlood.php")
+    Call<AdminGenralOutputs> getBloodUpdate(@Body AdminBloodGroupUpdateIn i);
 }

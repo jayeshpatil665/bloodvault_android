@@ -111,4 +111,19 @@ public class LoginActivity extends AppCompatActivity {
     public void onBackPressed() {
         //
     }
+
+    public void toAdminPannel(View view) {
+
+        String phone,pass;
+        phone = etLoginPhone.getText().toString().trim();
+        pass = etLoginPassword.getText().toString().trim();
+        if (phone.equals("123") && pass.equals("admin"))
+        {
+            Paper.book().write(DonorDetails.AdminActiveKey,"active");
+            Intent adminPannelIntent = new Intent(LoginActivity.this,AdminPannelActivity.class);
+            startActivity(adminPannelIntent);
+            finish();
+        }
+
+    }
 }

@@ -13,8 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodVault"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyDetailsActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".AdminUpdateBankStatusActivity"></activity>
+        <activity android:name=".AdminBloodRequestsActivity" />
+        <activity android:name=".AdminPannelActivity" />
+        <activity
+            android:name=".MyDetailsActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".BloodBankActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />

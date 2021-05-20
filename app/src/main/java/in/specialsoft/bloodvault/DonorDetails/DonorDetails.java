@@ -2,6 +2,8 @@ package in.specialsoft.bloodvault.DonorDetails;
 
 public class DonorDetails {
 
+    public static final String AdminActiveKey = "Active";
+
     public static final String UserIDKey = "UserId";
     public static final String UserNameKey = "UserName";
     public static final String UserPhoneKey = "UserPhone";

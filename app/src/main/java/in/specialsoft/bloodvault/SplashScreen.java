@@ -19,6 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static in.specialsoft.bloodvault.DonorDetails.DonorDetails.AdminActiveKey;
 import static in.specialsoft.bloodvault.DonorDetails.DonorDetails.UserIDKey;
 
 public class SplashScreen extends AppCompatActivity {
@@ -31,14 +32,23 @@ public class SplashScreen extends AppCompatActivity {
 
         if (isNetworkConnected())
         {
-            String useIdKey = Paper.book().read(UserIDKey);
-            if(useIdKey!=null)
-            {
-                allowAccess(useIdKey);
+            String adminActiveKey = Paper.book().read(AdminActiveKey);
+            if (adminActiveKey!=null){
+                Intent adminPannelIntent = new Intent(SplashScreen.this,AdminPannelActivity.class);
+                startActivity(adminPannelIntent);
+                finish();
             }
             else
             {
-                newUser();
+                String useIdKey = Paper.book().read(UserIDKey);
+                if(useIdKey!=null)
+                {
+                    allowAccess(useIdKey);
+                }
+                else
+                {
+                    newUser();
+                }
             }
         }
         else
